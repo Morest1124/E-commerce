@@ -10,7 +10,7 @@ class Order(models.Model):
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     
     def __str__(self):
-        return f"Order {self.id} by {self.user.username}"
+        return f"Order {self.id} by {self.user.username}" # type: ignore
         
     
 
@@ -22,4 +22,4 @@ class OrderItem(models.Model):
     
     def __str__(self) -> str:
         product_name = self.product.name if self.product else "Deleted Product"
-        return f"Order item for {product_name} in order {self.order.id}"
+        return f"Order item for {product_name} in order {self.order.id}" # type: ignore

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'shopping',
     'products',
     'orders',
+    'ecommerce',
+    'ecommerce.profiles',
 ]
 
 AUTH_USER_MODEL = 'shopping.CustomUser'
