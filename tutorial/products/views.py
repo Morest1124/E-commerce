@@ -1,7 +1,7 @@
 from django.shortcuts import render 
 from .models import Product
 from rest_framework import generics
-from serializers import ProductSerializer
+from .serializers import ProductSerializer
 # Create your views here.
 
 # View for listing all products and creating a new product
