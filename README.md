@@ -139,11 +139,18 @@ Some endpoints require authentication. An easy way to test these is to first log
 
 ### Profiles
 
-#### View Your Profile
+#### Manage Your Profile
 
-- **Method:** `GET`
+- **Method:** `GET`, `PUT`, `PATCH`
 - **URL:** `/api/profiles/profile/`
 - **Authentication:** Required.
-- **Description:** Retrieves the profile information for the currently logged-in user.
+- **Description:** Retrieves, creates, or updates the profile information for the currently logged-in user.
+- **Body (for `PUT` or `PATCH`):**
+  ```json
+  {
+      "address": "123 New Address St",
+      "phone_number": "+1234567890"
+  }
+  ```
 
 
