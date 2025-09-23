@@ -4,7 +4,7 @@ A Django Rest Framework API for a simple e-commerce platform. It provides endpoi
 
 ## Features
 
-- Product and Category Management (Create, Read)
+- Product and Category Management (Create, Read, Update, Delete)
 - User Profile Viewing
 - Django Admin Interface
 
@@ -34,7 +34,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 3.  **Install the dependencies:**
     ```bash
-    pip install -r requirements.txt
+      pip install -r requirements.txt
     ```
 
 4.  **Navigate to the project directory:**
@@ -95,6 +95,12 @@ Some endpoints require authentication. An easy way to test these is to first log
   -d '{"name": "Video Games", "slug": "video-games"}'
   ```
 
+#### Manage a Category
+
+- **Method:** `GET`, `PUT`, `PATCH`, `DELETE`
+- **URL:** `/api/products/categories/<id>/
+- **Description:** Retrieves, updates, or deletes a specific category by its ID.
+
 ---
 
 
@@ -106,11 +112,27 @@ Some endpoints require authentication. An easy way to test these is to first log
 - **URL:** `/api/products/`
 - **Description:** Retrieves a list of all products.
 
-#### Retrieve a Product
+#### Create Product
 
-- **Method:** `GET`
-- **URL:** `/api/products/<id>/`
-- **Description:** Retrieves the details of a single product by its ID.
+- **Method:** `POST`
+- **URL:** `/api/products/`
+- **Description:** Creates a new product.
+- **Body:**
+  ```json
+  {
+      "category": 1,
+      "name": "New Product Name",
+      "slug": "new-product-slug",
+      "description": "A description of the new product.",
+      "price": "99.99"
+  }
+  ```
+
+#### Manage a Product
+
+- **Method:** `GET`, `PUT`, `PATCH`, `DELETE`
+- **URL:** `/api/products/<id>/
+- **Description:** Retrieves, updates, or deletes a single product by its ID.
 
 ---
 

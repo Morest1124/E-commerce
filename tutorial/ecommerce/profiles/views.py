@@ -21,7 +21,6 @@ class UserProfileViews(APIView):
             
         # Return a successful response with serialized data
         return Response(serializer.data)
-            
     def post(self, request, *args, **kwargs):
         # Try to get the user's profile to see if it already exists
         try:

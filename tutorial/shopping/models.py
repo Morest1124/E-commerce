@@ -7,12 +7,13 @@ class CustomUser(AbstractUser):
     """
     Custom user model with additional fields.
     """
-    
+    first_name = models.CharField(max_length=150, blank=False)
+    last_name = models.CharField(max_length=150, blank=False)
     country_origin = models.CharField(max_length=50, blank=False, default='')
-    email = models.EmailField(unique=True, blank=True, null=True)
+    email = models.EmailField(unique=True, blank=False, null=False)
     phone_number = models.CharField(max_length=15, unique=True, null=True, blank=True)
     shipping_address = models.TextField(max_length=200, null=True, blank=True)
-    identity_number = models.CharField(max_length=20, unique=True, null=True, blank=True)
+    identity_number = models.CharField(max_length=255, unique=True, null=False, blank=False)
     
     # These fields are required to avoid conflicts with Django's default user model
     groups = models.ManyToManyField(
