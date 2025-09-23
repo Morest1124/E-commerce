@@ -28,6 +28,7 @@ class UserProfileViews(APIView):
             # If the profile exists, return a 400 Bad Request
             return Response(
                 {"message": "User profile already exists!"},
+                
                 status=status.HTTP_400_BAD_REQUEST
             )
         except UserProfile.DoesNotExist:
